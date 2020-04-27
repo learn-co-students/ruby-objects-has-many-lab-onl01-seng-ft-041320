@@ -6,11 +6,6 @@ class Artist
     @songs = [] 
   end
 
-  def songs
-    #hello.artist = adele
-    Song.all.select {|song| song.artist == self}
-  end
-
   def add_song(song)
     song.artist = self
     @songs << song
@@ -20,6 +15,12 @@ class Artist
     song = Song.new(song_name)
     song.artist = self
     @songs << song
+  end
+
+  def songs
+    #Song.all bring an array from @@all
+    #hello.artist = adele
+    Song.all.select {|song| song.artist == self}
   end
 
   def self.song_count
